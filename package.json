@@ -1,12 +1,14 @@
 {
   "name": "helloworld",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "dist/index.js",
   "author": "Justin Winter <justinlevi@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "ts-node-dev --ignore-watch node_modules --no-notify --respawn --transpileOnly src/index.ts",
-    "test": "yarn jest --forceExit --detectOpenHandles --maxWorkers=10"
+    "build": "tsc -p .",
+    "start": "yarn build && node dist/index.js",
+    "dev": "ts-node-dev --ignore-watch node_modules --no-notify --respawn --transpileOnly src/index.ts",
+    "test": "yarn jest --forceExit --detectOpenHandles --maxWorkers=10 --verbose --coverage"
   },
   "dependencies": {
     "ts-node-dev": "^1.0.0-pre.43"

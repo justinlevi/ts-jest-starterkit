@@ -1,9 +1,10 @@
-export const doTheOtherThing = (name: string) => {
+export const doTheOtherThing = async (name: string) => {
   console.log('ASYNC: doTheOtherThing -> doTheOtherThing');
   console.log('ASYNC: doTheOtherThing -> name', name);
-  return new Promise(() =>
-    setTimeout(() => {
-      msg: `Hey ${name} 🤠!`;
-    }, 1000),
-  );
+  return new Promise((resolve, _) => {
+    const wait = setTimeout(() => {
+      clearTimeout(wait);
+      resolve({ msg: `Hey ${name} 🤠!` });
+    }, 1000);
+  });
 };

@@ -13,11 +13,11 @@ describe('Do the Thing Tests', () => {
       const name = `${firstName} ${lastName}`;
 
       // Act
-      const result = doTheOtherThing(name);
+      const result = await doTheOtherThing(name);
 
       // Assert
       const expected = {
-        msg: `You know it ${name}`,
+        msg: `Hey ${name} 🤠!`,
       };
       expect(result).toMatchObject(expected);
     });

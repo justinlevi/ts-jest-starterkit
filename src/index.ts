@@ -5,6 +5,6 @@ const main = async () => {
     thing1: doTheThing('Mary'),
     thing2: await doTheOtherThing('Mo'),
   };
-  console.log('TCL: main -> result', result);
+  console.table(result);
 };
 main();
